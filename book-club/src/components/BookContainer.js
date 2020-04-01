@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import { BookContext } from '../context/BookContext';
 import {Book} from './Book'
 
-export function BookContainer(){
+export const BookContainer = () => {
     const {book} = useContext(BookContext);
+    console.log('Book from BookContainer: ', book);
 
     return(
        <div>
@@ -11,6 +12,7 @@ export function BookContainer(){
            {book.map(item =>{
                return <Book items ={item} key={item.id} />
            })}
+        
 
        </div>
     )

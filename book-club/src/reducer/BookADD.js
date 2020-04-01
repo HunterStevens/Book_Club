@@ -7,7 +7,7 @@ export function BookReducer(state, action) {
             return[...state, action.payload]
 
         case REMOVE_BOOK:
-            return state.filter(item => item.id === !action.payload.id)
+            return state.filter(item => item.id === action.payload ? null : item)
         default : 
         return state
     }
